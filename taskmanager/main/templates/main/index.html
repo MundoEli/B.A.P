@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Main page</h1>
+        {% if descriptions %}
+            {% for el in descriptions %}
+                <div class="alart-warning mt-2">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.description }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>There's no records</p>
+        {% endif %}
+{% endblock %}
+
+#{% if descriptions %}
+        {% for el in descriptions %}
+                <div class="alart-warning mt-2">
+                    <h3>{{ el.title }}</h3>
+                    <p>{{ el.description }}</p>
+                </div>
+        {% endfor %}
+{% else %}
+        <p>There's no records</p>
+    {% endif %}
+#
+
+{% block content2 %}
+    <h3>Category:</h3>
+        <ul>
+            {% for category in categories %}
+            <li>
+                 {{category.name}}
+            </li>
+            {% endfor %}
+        </ul>
+{% endblock %}
